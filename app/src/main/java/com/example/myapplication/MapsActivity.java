@@ -11,8 +11,12 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.Circle;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polygon;
+import com.google.android.gms.maps.model.PolygonOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -71,8 +75,32 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng amritsar = new LatLng(31.633980, 74.872261);
+        mMap.addMarker(new MarkerOptions().position(amritsar).title("Amritsar").snippet("Save Punjab NGO Delivered 4 days back"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(amritsar));
+
+        googleMap.animateCamera(CameraUpdateFactory.zoomIn());
+        // Zoom out to zoom level 10, animating with a duration of 2 seconds.
+        googleMap.animateCamera(CameraUpdateFactory.zoomTo(13), 2000, null);
+
+        // Instantiates a new Polygon object and adds points to define a rectangle
+        PolygonOptions rectOptions = new PolygonOptions()
+                .add(new LatLng(31.671061,74.894678),
+                        new LatLng(31.614943,74.946837),
+                        new LatLng(31.581022,74.858889),
+                        new LatLng(31.622544,74.773690),
+                        new LatLng(31.671061,74.894678));
+
+        // Get back the mutable Polygon
+        Polygon polygon = googleMap.addPolygon(rectOptions);
+        // Instantiates a new CircleOptions object and defines the center and radius
+        CircleOptions circleOptions = new CircleOptions()
+                .center(new LatLng(31.633980, 74.872261))
+                .radius(1000); // In meters
+
+        // Get back the mutable Circle
+        Circle circle = googleMap.addCircle(circleOptions);
+
+
     }
 }
