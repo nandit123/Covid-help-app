@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashScreen">
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:text="Community Service"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="338dp" />
+
+    <TextView
+        android:id="@+id/t2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1.5in"
+        android:layout_marginBottom="15dp"
+        android:text="Optimizing the aid distribution system during pandemic"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="338dp" />
+
+</RelativeLayout>
