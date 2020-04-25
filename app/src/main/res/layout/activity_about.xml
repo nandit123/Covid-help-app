@@ -7,14 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".About">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="About"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"/>
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,5 +16,70 @@
         app:itemIconTint="@drawable/selector"
         app:menu="@menu/menu_navigation"
         android:layout_alignParentBottom="true"/>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Donation"
+                android:textSize="60dp"
+                android:id="@+id/donationText"
+                android:textColor="#000"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_margin="10dp"
+                android:text="Food Packets: "
+                android:layout_below="@id/donationText"
+                android:textSize="25sp"
+                android:textColor="#000000"
+                android:id="@+id/foodPacketsText"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/foodPacketsText"
+                android:layout_below="@id/donationText"
+                android:layout_marginLeft="25dp"
+                android:hint="100"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:id="@+id/food_packets"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/food_packets"
+            android:layout_marginTop="18dp"
+            android:text="Give Location Access"
+            android:background="@color/colorPrimary"
+            android:textColor="#ffffff"
+            android:padding="20dp"
+            android:textSize="15dp"
+            android:id="@+id/get_location_button" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_check_box"
+            android:layout_below="@id/food_packets"
+            android:layout_toRightOf="@id/get_location_button"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="18dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/food_packets"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="164dp"
+            android:background="@color/colorPrimary"
+            android:padding="5dp"
+            android:text="Submit"
+            android:textColor="#ffffff"
+            android:textSize="25dp" />
+
+    </RelativeLayout>
 </RelativeLayout>
