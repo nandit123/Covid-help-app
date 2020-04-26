@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#000000">
 
     <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
@@ -15,16 +16,11 @@
         <!--android:textStyle="bold"-->
         <!--android:layout_centerInParent="true"/>-->
 
-    <!-- A RecyclerView with some commonly used attributes -->
-    <!--<RecyclerView-->
-        <!--android:id="@+id/my_recycler_view"-->
-        <!--android:scrollbars="vertical"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"/>-->
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/my_recycler_view"/>
+        android:id="@+id/my_recycler_view"
+        android:scrollbars="vertical" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
@@ -35,8 +31,5 @@
         app:itemIconTint="@drawable/selector"
         app:menu="@menu/menu_navigation"
         android:layout_alignParentBottom="true"/>
-
-
-
 
 </RelativeLayout>
