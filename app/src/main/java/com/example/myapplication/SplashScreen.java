@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,10 +11,14 @@ public class SplashScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        int SPLASH_TIME = 2000;
+        int SPLASH_TIME = 3000;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
