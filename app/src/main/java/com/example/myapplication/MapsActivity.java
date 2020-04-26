@@ -13,8 +13,12 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
+import com.google.android.gms.maps.model.Dash;
+import com.google.android.gms.maps.model.Dot;
+import com.google.android.gms.maps.model.Gap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PatternItem;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -60,6 +64,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
     }
 
+    private static final int COLOR_BLACK_ARGB = 0xff000000;
+    private static final int COLOR_WHITE_ARGB = 0xffffffff;
+    private static final int COLOR_GREEN_ARGB = 0xff388E3C;
+    private static final int COLOR_PURPLE_ARGB = 0xff81C784;
+    private static final int COLOR_ORANGE_ARGB = 0xffF57F17;
+    private static final int COLOR_BLUE_ARGB = 0xffF9A825;
+
+    private static final int POLYGON_STROKE_WIDTH_PX = 8;
+    private static final int PATTERN_DASH_LENGTH_PX = 20;
+    private static final int PATTERN_GAP_LENGTH_PX = 20;
+    private static final PatternItem DOT = new Dot();
+    private static final PatternItem DASH = new Dash(PATTERN_DASH_LENGTH_PX);
+    private static final PatternItem GAP = new Gap(PATTERN_GAP_LENGTH_PX);
 
     /**
      * Manipulates the map once available.
@@ -92,6 +109,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         new LatLng(31.671061,74.894678));
 
         // Get back the mutable Polygon
+
         Polygon polygon = googleMap.addPolygon(rectOptions);
         // Instantiates a new CircleOptions object and defines the center and radius
         CircleOptions circleOptions = new CircleOptions()
@@ -102,5 +120,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Circle circle = googleMap.addCircle(circleOptions);
 
 
+        Polygon polygon1 = googleMap.addPolygon(new PolygonOptions()
+                .clickable(true)
+                .add(
+                        new LatLng(-27.457, 153.040),
+                        new LatLng(-33.852, 151.211),
+                        new LatLng(-37.813, 144.962),
+                        new LatLng(-34.928, 138.599)));
+//        polygon1.setFillColor(COLOR_GREEN_ARGB);
+        circle.setFillColor(COLOR_GREEN_ARGB);
+        circle.setStrokeColor(0x00000000);
     }
 }
