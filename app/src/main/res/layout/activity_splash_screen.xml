@@ -15,7 +15,7 @@
         android:layout_marginTop="20dp"
         android:textColor="#000000"
         android:gravity="center_horizontal"
-        android:text="Community Service"
+        android:text="Optimized Aid"
         android:textSize="40dp"
         android:textStyle="bold" />
 
